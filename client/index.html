@@ -1,0 +1,21 @@
+<!doctype html>
+<html ng-app="winner">
+  <head>
+    <title>The winner takes it all...</title>
+  </head>
+
+  <body ng-controller="EventsController as eventsController">
+    <h1>The winner takes it all</h1>
+
+    <div ng-repeat="event in eventsController.events">
+      <h2>{{event.date.day}}.{{event.date.month}}.{{event.date.year}}</h2>
+      <form ng-submit="eventsController.addParticipant(event.id, name, phoneNumber)">
+        <input type="text" placeholder="Name" ng-model="name" /><br />
+        <input type="text" placeholder="Phone number" ng-model="phoneNumber" /><br />
+        <button type="submit">Teilnehmen!</button>
+      </form>
+    </div>
+
+    <script type="text/javascript" src="build.js"></script>
+  </body>
+</html>
